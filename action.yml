@@ -14,4 +14,12 @@ runs:
   env:
     DOCKER_BUILDKIT: '1'
   args:
+    - build
+    - --build-arg
+    - BUILDKIT_INLINE_CACHE=1
+    - --target
+    - my-target
+    - -t
+    - my-image
+    - .
     - ${{ inputs.who-to-greet }}
