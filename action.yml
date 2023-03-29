@@ -11,5 +11,7 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    DOCKER_BUILDKIT: '1'
   args:
     - ${{ inputs.who-to-greet }}
